@@ -1,4 +1,4 @@
--- componente Roles. Funcionalidades habilitadas para un usuario.
+--Hola. componente Roles. Funcionalidades habilitadas para un usuario.
 
 -- CATALOGO DE FUNCIONALIDADES
 CREATE TABLE ZZFunctions(
@@ -13,7 +13,7 @@ funcdesc VARCHAR2(80) NULL
 LOGGING;
 COMMENT ON TABLE ZZFunctions IS 'Funcionalides asociadas a una aplicacion';
 COMMENT ON COLUMN ZZFunctions.id IS 'idnetificador unico de la funcionalidad';
-COMMENT ON COLUMN ZZFunctions.appcode IS 'Codigo que identifica la aplicaciÛn a la que est· asociada la funcionalidad';
+COMMENT ON COLUMN ZZFunctions.appcode IS 'Codigo que identifica la aplicaci√≥n a la que est√° asociada la funcionalidad';
 COMMENT ON COLUMN ZZFunctions.modcode IS 'Codigo del modulo al que esta asociada la funcionalidad';
 COMMENT ON COLUMN ZZFunctions.sercode IS 'Codigo del servicio al que esta asociada la funcionalidad';
 COMMENT ON COLUMN ZZFunctions.acccode IS 'Codigo de la accion al que esta asociada la funcionalidad';
@@ -42,7 +42,7 @@ roldesc VARCHAR2(80) NULL
 LOGGING;
 COMMENT ON TABLE ZZRoles IS 'Roles asociadas a una aplicacion';
 COMMENT ON COLUMN ZZRoles.id IS 'idnetificador unico del rol';
-COMMENT ON COLUMN ZZRoles.appcode IS 'Codigo que identifica la aplicaciÛn a la que est· asociada el rol';
+COMMENT ON COLUMN ZZRoles.appcode IS 'Codigo que identifica la aplicaci√≥n a la que est√° asociada el rol';
 COMMENT ON COLUMN ZZRoles.rolcode IS 'Codigo del rol';
 COMMENT ON COLUMN ZZRoles.rolname IS 'nombre del rol';
 COMMENT ON COLUMN ZZRoles.roldesc IS 'Descripcion del rol';
@@ -86,7 +86,7 @@ groupdesc VARCHAR2(80) NULL
 LOGGING;
 COMMENT ON TABLE ZZGROUPS IS 'Grupos definidos en una aplicacion';
 COMMENT ON COLUMN ZZGROUPS.id IS 'idnetificador unico del grupo';
-COMMENT ON COLUMN ZZGROUPS.appcode IS 'Codigo que identifica la aplicaciÛn a la que est· asociada el grupo';
+COMMENT ON COLUMN ZZGROUPS.appcode IS 'Codigo que identifica la aplicaci√≥n a la que est√° asociada el grupo';
 COMMENT ON COLUMN ZZGROUPS.groupcode IS 'Codigo del grupo';
 COMMENT ON COLUMN ZZGROUPS.groupname IS 'nombre del grupo';
 COMMENT ON COLUMN ZZGROUPS.groupdesc IS 'Descripcion del grupo';
