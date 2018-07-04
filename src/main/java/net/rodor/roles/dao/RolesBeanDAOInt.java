@@ -3,7 +3,7 @@ package net.rodor.roles.dao;
 import java.sql.SQLException;
 import java.util.Collection;
 
-import net.rodor.roles.vo.RolBean;
+import net.rodor.roles.vo.RFunctionBean;
 
 public interface RolesBeanDAOInt {
 
@@ -17,7 +17,7 @@ public interface RolesBeanDAOInt {
 	 * @param fecha
 	 * @return
 	 */
-	public Collection<RolBean> getAllByParent(String app, String parentcode,java.sql.Timestamp fecha) throws SQLException;
+	public Collection<RFunctionBean> getAllByParent(String app, String parentcode,java.sql.Timestamp fecha) throws SQLException;
 	
 	
 	

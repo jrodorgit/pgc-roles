@@ -10,8 +10,9 @@ import java.util.Collection;
 
 import net.rodor.roles.bbdd.DataBaseConnFactory;
 import net.rodor.roles.bbdd.PreparedStatementFactory;
-import net.rodor.roles.vo.RolBean;
-import net.rodor.roles.vo.RolesBeanFactory;
+import net.rodor.roles.vo.RFunctionBean;
+import net.rodor.roles.vo.RFunctionsBeanFactory;
+
 
 public class RolesBeanDAOImpl implements RolesBeanDAOInt {
 
@@ -23,10 +24,10 @@ public class RolesBeanDAOImpl implements RolesBeanDAOInt {
 	}
 
 	
-	public Collection<RolBean> getAllByParent(String app, String parentcode,java.sql.Timestamp fecha) throws SQLException {
+	public Collection<RFunctionBean> getAllByParent(String app, String parentcode,java.sql.Timestamp fecha) throws SQLException {
 		
 		Connection conn = DataBaseConnFactory.getInstance().getConnection();
-		Collection<RolBean> beans = new ArrayList<RolBean>();
+		Collection<RFunctionBean> beans = new ArrayList<RFunctionBean>();
 		
 		PreparedStatementFactory psf = PreparedStatementFactory.getInstance();
 		String sql = psf.getSQL(RolesBeanDAOInt.SCOPES_SELECT_ALL_BY_PARENT);
@@ -57,7 +58,7 @@ public class RolesBeanDAOImpl implements RolesBeanDAOInt {
 			ps.setDate(4, fechaActivo);
 			
 			ResultSet rs = ps.executeQuery();
-			RolesBeanFactory fac = RolesBeanFactory.getInstance();
+			RFunctionsBeanFactory fac = RFunctionsBeanFactory.getInstance();
 			while(rs.next()){
 				
 				beans.add(fac.mapRow(rs));
