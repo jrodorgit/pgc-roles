@@ -1,6 +1,6 @@
-DROP TABLE ZZUsers_Groups;
+DROP TABLE RUsers_Groups;
 
-DROP TABLE ZZUSERS;
+DROP TABLE RUSERS;
 
 DROP TABLE RRoles_Groups;
 

@@ -90,48 +90,33 @@ COMMIT;
 
 
 -- CATALOGO DE USUARIOS
-CREATE TABLE ZZUSERS(
-id NUMBER(5) NOT NULL,
-appcode VARCHAR2(20) NOT NULL ,
-usercode VARCHAR2(20) NOT NULL ,
-nombre VARCHAR2(80) NOT NULL ,
-startdate TIMESTAMP NOT NULL ,
-enddate TIMESTAMP NOT NULL 
-) 
-LOGGING;
-COMMENT ON TABLE ZZUSERS IS 'Usuarios definidos en una aplicacion';
-COMMENT ON COLUMN ZZUSERS.id IS 'Identificador unico del registro';
-COMMENT ON COLUMN ZZUSERS.appcode IS 'Identificador del aplicacion';
-COMMENT ON COLUMN ZZUSERS.usercode IS 'Codigo del usuario en la aplicacion';
-COMMENT ON COLUMN ZZUSERS.nombre IS 'Nombre del usuario';
-COMMENT ON COLUMN ZZUSERS.startdate IS 'fecha de inicio de validez del usuario en la aplicacion';
-COMMENT ON COLUMN ZZUSERS.enddate IS 'fecha de fin de validez del usuario en la aplicacion';
+CREATE TABLE RUSERS(
+id int NOT NULL  COMMENT 'Identificador unico del usuario',
+usercode char(20)  NOT NULL COMMENT 'codigo del usuario',
+nombre char(80)  NOT NULL COMMENT 'nombre del usuario',
+startdate datetime NOT NULL COMMENT 'fecha de inicio de validez del usuario',
+enddate datetime NOT NULL  COMMENT 'fecha de fin de validez del usuario'
+);
 
---REM INSERTING into ZZUSERS
-Insert into ZZUSERS (id,appcode,usercode,nombre,startdate,enddate) values (1,'APP_4','USER_41','Nombre usuario 41',to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
-Insert into ZZUSERS (id,appcode,usercode,nombre,startdate,enddate) values (2,'APP_4','USER_42','Nombre usuario 42',to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
+-- RUSERS
+Insert into RUSERS (id,usercode,nombre,startdate,enddate) values (1,'USER_41','Nombre usuario 41',"2017/01/01 00:00:00.000000000","2018/12/31 00:00:00.000000000");
+Insert into RUSERS (id,usercode,nombre,startdate,enddate) values (2,'USER_42','Nombre usuario 42',"2017/01/01 00:00:00.000000000","2018/12/31 00:00:00.000000000");
 
 
 COMMIT;
 
 
 -- GRUPOS DE USUARIOS
-CREATE TABLE ZZUsers_Groups(
-idgroup NUMBER(5) NOT NULL,
-idusr NUMBER(5) NOT NULL,
-startdate TIMESTAMP NOT NULL ,
-enddate TIMESTAMP NOT NULL  
-) 
-LOGGING;
-COMMENT ON TABLE ZZUsers_Groups IS 'RELACION DE usuarios QUE PERTENECEN A UN GRUPO EN UN PERIODO DE TIEMPO';
-COMMENT ON COLUMN ZZUsers_Groups.idgroup IS 'Identificador deL GRUPO';
-COMMENT ON COLUMN ZZUsers_Groups.idusr IS 'Identificador del usuario';
-COMMENT ON COLUMN ZZUsers_Groups.startdate IS 'fecha de inicio de validez del usuario en el grupo';
-COMMENT ON COLUMN ZZUsers_Groups.enddate IS 'fecha de fin de validez del usuario en el grupo';
+CREATE TABLE RUsers_Groups(
+idgroup int NOT NULL COMMENT 'Identificador deL GRUPO',
+idusr int NOT NULL COMMENT 'Identificador del usuario',
+startdate datetime NOT NULL COMMENT 'fecha de inicio de validez del usuario en el grupo',
+enddate datetime NOT NULL  COMMENT 'fecha de fin de validez del usuario en el grupo'
+);
 
---REM INSERTING into ZZRoles_Groups
-Insert into ZZUsers_Groups (idgroup,idusr,startdate,enddate) values (1,1,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
-Insert into ZZUsers_Groups (idgroup,idusr,startdate,enddate) values (2,2,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2028 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
+--   RUsers_Groups
+Insert into RUsers_Groups (idgroup,idusr,startdate,enddate) values (1,1,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),"2017/01/01 00:00:00.000000000","2018/12/31 00:00:00.000000000");
+Insert into RUsers_Groups (idgroup,idusr,startdate,enddate) values (2,2,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),"2017/01/01 00:00:00.000000000","2018/12/31 00:00:00.000000000");
 
 
 COMMIT;

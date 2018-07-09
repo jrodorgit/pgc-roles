@@ -126,7 +126,6 @@ COMMIT;
 -- CATALOGO DE USUARIOS
 CREATE TABLE ZZUSERS(
 id NUMBER(5) NOT NULL,
-appcode VARCHAR2(20) NOT NULL ,
 usercode VARCHAR2(20) NOT NULL ,
 nombre VARCHAR2(80) NOT NULL ,
 startdate TIMESTAMP NOT NULL ,
@@ -135,15 +134,14 @@ enddate TIMESTAMP NOT NULL
 LOGGING;
 COMMENT ON TABLE ZZUSERS IS 'Usuarios definidos en una aplicacion';
 COMMENT ON COLUMN ZZUSERS.id IS 'Identificador unico del registro';
-COMMENT ON COLUMN ZZUSERS.appcode IS 'Identificador del aplicacion';
 COMMENT ON COLUMN ZZUSERS.usercode IS 'Codigo del usuario en la aplicacion';
 COMMENT ON COLUMN ZZUSERS.nombre IS 'Nombre del usuario';
 COMMENT ON COLUMN ZZUSERS.startdate IS 'fecha de inicio de validez del usuario en la aplicacion';
 COMMENT ON COLUMN ZZUSERS.enddate IS 'fecha de fin de validez del usuario en la aplicacion';
 
 --REM INSERTING into ZZUSERS
-Insert into ZZUSERS (id,appcode,usercode,nombre,startdate,enddate) values (1,'APP_4','USER_41','Nombre usuario 41',to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
-Insert into ZZUSERS (id,appcode,usercode,nombre,startdate,enddate) values (2,'APP_4','USER_42','Nombre usuario 42',to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
+Insert into ZZUSERS (id,usercode,nombre,startdate,enddate) values (1,'USER_41','Nombre usuario 41',to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
+Insert into ZZUSERS (id,usercode,nombre,startdate,enddate) values (2,'USER_42','Nombre usuario 42',to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/RR HH24:MI:SS,FF'));
 
 
 COMMIT;

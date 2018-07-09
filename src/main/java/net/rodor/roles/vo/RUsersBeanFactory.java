@@ -24,7 +24,7 @@ public class RUsersBeanFactory {
 		
 		RUsersBean miEntity= new RUsersBean() ;
 		miEntity.id = rs.getLong(RUsersBean.ID);
-		miEntity.appcode = rs.getString(RUsersBean.APPCODE);
+		
 		miEntity.usercode = rs.getString(RUsersBean.USERCODE);
 		miEntity.nombre = rs.getString(RUsersBean.NOMBRE);
 		miEntity.startdate = rs.getTimestamp(RUsersBean.STARTDATE);
