@@ -45,14 +45,14 @@ public class RolesDAOImpl implements RolesDAOInt {
 		PreparedStatement ps=null;
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, usr);
-			ps.setString(2, app);
+			ps.setString(1, usr);	
+			ps.setDate(2, fechaActivo);
 			ps.setDate(3, fechaActivo);
 			ps.setDate(4, fechaActivo);
 			ps.setDate(5, fechaActivo);
 			ps.setDate(6, fechaActivo);
 			ps.setDate(7, fechaActivo);
-			ps.setDate(8, fechaActivo);
+			ps.setString(8, app);
 			
 			ResultSet rs = ps.executeQuery();
 			RFunctionsBeanFactory fac = RFunctionsBeanFactory.getInstance();
