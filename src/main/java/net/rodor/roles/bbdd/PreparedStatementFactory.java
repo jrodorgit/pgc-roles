@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 public class PreparedStatementFactory{
 
 	//private  static  ResourceBundle sqls = ResourceBundle.getBundle ("net.rodor.pgcconstantes.bbdd.DML-Constantes",Locale.getDefault());
-	private  static  ResourceBundle sqls = ResourceBundle.getBundle ("net.rodor.scopes.bbdd.DML-Scopes");
+	private  static  ResourceBundle sqls = ResourceBundle.getBundle ("net.rodor.roles.bbdd.DML-Roles");
 	//private  static  ResourceBundle sqls = ResourceBundle.getBundle ("DML-Constantes");
 	private  volatile static PreparedStatementFactory instance;
 	private PreparedStatementFactory(){}

@@ -18,7 +18,7 @@ public class RFunctionBean implements  java.io.Serializable  {
 	public static final String FUNCDESC = "funcdesc";
 	
 	
-	public  Long id;
+	public  Integer id;
 	public  String appcode;
 	public  String modcode;
 	public  String sercode;
