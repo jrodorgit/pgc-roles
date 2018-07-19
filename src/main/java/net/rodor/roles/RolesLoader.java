@@ -64,4 +64,28 @@ public class RolesLoader implements RolesLoaderInt{
 
 		return users;
 	}
+	
+	public boolean hasUserFuncApp(String app, String usr,String funcname,java.sql.Timestamp fecha) throws SQLException, RolesException{
+		
+		boolean has = false;
+		
+		if( app == null || "".equalsIgnoreCase(app)){
+			throw new RolesException(RolesException.NULL_APP);
+		}
+		if( funcname == null || "".equalsIgnoreCase(funcname)){
+			throw new RolesException(RolesException.NULL_FUNC);
+		}
+		if( funcname == null || "".equalsIgnoreCase(usr)){
+			throw new RolesException(RolesException.NULL_USR);
+		}
+		
+		try{
+			RolesDAOInt dao = new RolesDAOImpl();
+			has = dao.hasUserFuncApp(app, usr, funcname, fecha);
+		} finally{
+			
+		}
+			
+		return has;
+	}
 }

@@ -11,4 +11,6 @@ public interface RolesLoaderInt {
 	public Collection<RFunctionBean> getFuncsByUserApp(String app, String usr, java.sql.Timestamp fecha) throws SQLException, RolesException;
 	
 	public Collection<RUsersBean> getUsersByFuncApp(String app, String funcname,java.sql.Timestamp fecha) throws SQLException, RolesException;
+
+	public boolean hasUserFuncApp(String app, String usr,String funcname,java.sql.Timestamp fecha) throws SQLException, RolesException;
 }

@@ -44,5 +44,20 @@ public class PGCRolesLoaderTest extends TestCase{
 		
 	}
 	
+	public void testHasUserFunctionApp(){
+		
+		RolesLoaderInt rolesLoader = RolesLoader.getInstance();
+		boolean has = false;
+		try {
+			has = rolesLoader.hasUserFuncApp("APP_4", "USER_41","ACCESO SERV 411", null);
+			System.out.println("Tiene funcionalidad usuario en app?"+has);
+		} catch (SQLException | RolesException e) {
+			e.printStackTrace();
+		}
+		assertEquals(true, has);
+		
+		
+	}
+	
 
 }
